@@ -1,0 +1,91 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Exe</title>
+</head>
+<body>
+		<form id="todoForm">
+	  <input id="todoInput" type="text">
+  		<button type="button" id="button" onclick="addTodo()">Add your To Do</button> 
+		</form>
+		<ol id="toDoList"></ol>
+
+		<script type="text/javascript">
+			var todos = [];
+
+		function addTodo() {
+  		  var inputValue = document.getElementById('todoInput').value;
+  		  todos.push(inputValue);
+  		  printTodos();
+		}
+
+		function printTodos() {
+  		  var list = document.getElementById('toDoList');
+   		  list.innerHTML = ''; 
+
+    	for (var i = 0; i < todos.length; i++) {
+        var li = document.createElement('li');
+        var listItem = li.appendChild(document.createTextNode(todos[i]));
+
+        list.appendChild(listItem);
+
+    	}
+}
+	
+/*document.getElementById('button', function() {
+    addTodo();
+    printTodos();
+});
+*/		</script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html >
+<head>
+    <title>My To Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="to_do.css">
+  
+</head>
+<body>
+	<center>
+    <div class="todo1">
+        <div id="newtask" class="task1">
+        	<h2><u>To Do List</u></h2>
+            <input type="text" id="textbox" placeholder="Task to be done..">
+            <button id="push">Add</button>
+        </div>
+        <div id="tasks" class="task2"></div>
+    </div>
+    <!--Script-->
+    <script type="text/javascript">
+document.querySelector('#push').onclick = function(){
+    if(document.querySelector('#newtask input').value == length)
+    {
+        alert("Please Enter a Task")
+    }
+    else{
+        document.querySelector('#tasks').innerHTML += `
+            <div class="task">
+                <span id="taskname">
+                    ${document.querySelector('#newtask input').value}
+                </span>
+                <button class="delete">
+                    <i class="far fa-trash-alt"></i>
+                </button>
+            </div>
+        `;
+
+        var current_tasks = document.querySelectorAll(".delete");
+        for(var i=0; i<current_tasks.length; i++){
+            current_tasks[i].onclick = function(){
+                this.parentNode.remove();
+            }
+        }
+    }
+      document.getElementById("textbox").value="";
+  }
+    </script>
+    </center>
+</body>
+</html>
